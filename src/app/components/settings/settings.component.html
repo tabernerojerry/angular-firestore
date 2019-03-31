@@ -1,0 +1,35 @@
+<section class="settings-container">
+  <h1>Edit Settings</h1>
+  <form (submit)="onSubmit()">
+    <div class="field-full-width">
+      <mat-checkbox
+        name="allowRegistration"
+        [checked]="settings.allowRegistration"
+        (change)="settings.allowRegistration = !settings.allowRegistration"
+      >
+        Allow Registration
+      </mat-checkbox>
+    </div>
+    <div class="field-full-width">
+      <mat-checkbox
+        name="disabledBalanceOnAdd"
+        [checked]="settings.disabledBalanceOnAdd"
+        (change)="
+          settings.disabledBalanceOnAdd = !settings.disabledBalanceOnAdd
+        "
+        >Disable Balance On Add</mat-checkbox
+      >
+    </div>
+    <div class="field-full-width">
+      <mat-checkbox
+        name="disabledBalanceOnEdit"
+        [checked]="settings.disabledBalanceOnEdit"
+        (change)="
+          settings.disabledBalanceOnEdit = !settings.disabledBalanceOnEdit
+        "
+        >Disable Balance On Edit</mat-checkbox
+      >
+    </div>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+</section>

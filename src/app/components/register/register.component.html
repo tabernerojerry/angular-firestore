@@ -1,0 +1,57 @@
+<div class="login-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Client Panel Register</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()">
+        <mat-form-field class="field-full-width">
+          <input
+            matInput
+            type="email"
+            placeholder="Email"
+            name="email"
+            #clientEmail="ngModel"
+            [(ngModel)]="data.email"
+            pattern='^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))'
+            required
+          />
+        </mat-form-field>
+        <div
+          *ngIf="clientEmail.errors && clientEmail.touched"
+          class="invalid-message"
+        >
+          <div [hidden]="!clientEmail.errors?.required">
+            Email is required!
+          </div>
+          <div [hidden]="!clientEmail.errors?.pattern">
+            Email is invalid!
+          </div>
+        </div>
+
+        <mat-form-field class="field-full-width">
+          <input
+            matInput
+            type="password"
+            placeholder="Password"
+            name="password"
+            #clientPassword="ngModel"
+            [(ngModel)]="data.password"
+            required
+          />
+        </mat-form-field>
+        <div
+          *ngIf="clientPassword.errors && clientPassword.touched"
+          class="invalid-message"
+        >
+          <div [hidden]="!clientPassword.errors?.required">
+            Password is required!
+          </div>
+        </div>
+        <button mat-raised-button color="primary" type="submit">
+          Register
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

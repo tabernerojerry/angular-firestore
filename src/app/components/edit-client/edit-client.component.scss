@@ -1,0 +1,21 @@
+.field-full-width {
+  width: 100%;
+}
+.invalid-message {
+  color: red;
+}
+
+.mat-card {
+  /deep/ &.alert {
+    color: #fff !important;
+    margin-bottom: 16px !important;
+
+    &.alert-danger {
+      background-color: red !important;
+    }
+
+    &.alert-success {
+      background-color: green !important;
+    }
+  }
+}

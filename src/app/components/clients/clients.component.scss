@@ -1,0 +1,48 @@
+.client-container {
+  display: flex;
+  justify-content: space-between;
+
+  .client-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    padding-right: 16px;
+  }
+}
+
+table {
+  width: 100%;
+
+  td.mat-cell:last-of-type {
+    width: 75px;
+  }
+}
+
+mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+
+  span:first-child {
+    display: flex;
+    align-items: center;
+
+    mat-icon {
+      margin-right: 4px;
+    }
+  }
+}
+
+.mat-card {
+  /deep/ &.alert {
+    color: #fff !important;
+    margin-bottom: 16px !important;
+
+    &.alert-danger {
+      background-color: red !important;
+    }
+
+    &.alert-success {
+      background-color: green !important;
+    }
+  }
+}

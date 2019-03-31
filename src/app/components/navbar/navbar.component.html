@@ -1,0 +1,17 @@
+<header class="mat-elevation-z4">
+  <nav class="nav-left">
+    <a mat-button class="logo">ClientPanel</a>
+    <a mat-button routerLink="/" *ngIf="isLoggedIn">Dashboard</a>
+  </nav>
+  <nav class="nav-right">
+    <ng-container *ngIf="!isLoggedIn && showRegister">
+      <a mat-button routerLink="/login">Login</a>
+      <a mat-button routerLink="/register">Register</a>
+    </ng-container>
+    <ng-container *ngIf="isLoggedIn">
+      <a mat-button>{{ loggedInUser }}</a>
+      <a mat-button routerLink="/settings">Settings</a>
+      <a mat-button (click)="onLogoutClick()">Logout</a>
+    </ng-container>
+  </nav>
+</header>

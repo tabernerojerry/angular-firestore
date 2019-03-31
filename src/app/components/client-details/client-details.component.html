@@ -1,0 +1,41 @@
+<section class="details-container">
+  <div class="action-container" *ngIf="client">
+    <a routerLink="/client/edit/{{ id }}" mat-raised-button color="primary"
+      >Edit</a
+    >
+    &nbsp;
+    <a (click)="onDeleteClick()" mat-raised-button color="warn">Delete</a>
+  </div>
+  <div class="content-container">
+    <h1>{{ client && client.firstname }} {{ client && client.lastname }}</h1>
+    <h3>Client ID: {{ client && client.id }}</h3>
+    <p>
+      Balance
+      <span [class.text-danger]="hasBalance" [class.text-success]="!hasBalance">
+        {{ client && client.balance | currency }}
+      </span>
+      <small>
+        <a (click)="showBalanceUpdateInput = !showBalanceUpdateInput"
+          ><mat-icon>edit</mat-icon></a
+        >
+      </small>
+    </p>
+    <div *ngIf="showBalanceUpdateInput">
+      <form (submit)="updateBalance()">
+        <mat-form-field class="field-full-width">
+          <input
+            matInput
+            type="number"
+            placeholder="Balance"
+            name="balance"
+            [(ngModel)]="client.balance"
+          />
+        </mat-form-field>
+        &nbsp;
+        <button type="submit" mat-raised-button color="primary">Update</button>
+      </form>
+    </div>
+    <p>Email: {{ client && client.email }}</p>
+    <p>Phone Number: {{ client && client.phone }}</p>
+  </div>
+</section>

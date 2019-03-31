@@ -38,7 +38,9 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+/src/app/environments/environment.ts
 
 # System Files
 .DS_Store
 Thumbs.db
+.vscode

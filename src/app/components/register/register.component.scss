@@ -1,0 +1,37 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+mat-card {
+  max-width: 300px;
+}
+
+.mat-card-header /deep/ .mat-card-title {
+  text-align: center;
+  font-size: 30px;
+}
+
+.field-full-width {
+  width: 100%;
+}
+
+.invalid-message {
+  color: red;
+}
+
+.mat-card {
+  /deep/ &.alert {
+    color: #fff !important;
+    margin-bottom: 16px !important;
+
+    &.alert-danger {
+      background-color: red !important;
+    }
+
+    &.alert-success {
+      background-color: green !important;
+    }
+  }
+}
